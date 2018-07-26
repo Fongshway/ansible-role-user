@@ -1,5 +1,11 @@
 ---
 - name: Prepare
   hosts: all
-  gather_facts: false
-  tasks: []
+  gather_facts: true
+  tasks:
+    - name: Ensure ssh is present in Arch distros
+      pacman:
+        name: openssh
+        state: present
+      become: true
+      when: ansible_os_family == 'Archlinux'
