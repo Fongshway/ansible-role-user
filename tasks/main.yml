@@ -1,2 +1,17 @@
 ---
-# tasks file for ansible-role-user
+- name: Ensure wheel group exists
+  group:
+    name: wheel
+    state: present
+  become: true
+
+- name: Create primary unprivileged user account
+  user:
+    name: "{{ user_username }}"
+    password: "{{ user_password }}"
+    group: users
+    groups: wheel
+    append: true
+    shell: /bin/zsh
+    generate_ssh_key: true
+  become: true
