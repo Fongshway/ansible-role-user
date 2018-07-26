@@ -1,2 +1,3 @@
 ---
-# defaults file for ansible-role-user
+user_password: password
+user_username: user
