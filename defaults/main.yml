@@ -1,3 +1,4 @@
 ---
 user_password: password
+user_shell: /bin/bash
 user_username: user
