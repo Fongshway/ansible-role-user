@@ -12,6 +12,6 @@
     group: users
     groups: wheel
     append: true
-    shell: /bin/zsh
+    shell: "{{ user_shell }}"
     generate_ssh_key: true
   become: true
