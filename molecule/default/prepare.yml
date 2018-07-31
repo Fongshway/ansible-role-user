@@ -9,3 +9,10 @@
         state: present
       become: true
       when: ansible_os_family == 'Archlinux'
+
+    - name: Ensure ssh is present in Ubuntu distros
+      apt:
+        name: openssh-server
+        state: present
+      become: true
+      when: ansible_distribution == 'Ubuntu'
