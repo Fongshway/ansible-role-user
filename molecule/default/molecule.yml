@@ -6,8 +6,10 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
+  - name: instance-arch
     image: archlinux/base
+  - name: instance-bionic
+    image: ubuntu:bionic
 provisioner:
   name: ansible
   config_options:
